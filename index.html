@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Network</title>
+        <script type="text/javascript" src="https://unpkg.com/vis-network@9.1.0/standalone/umd/vis-network.js"></script>
+        
+
+        
+    </head>
+    <body class="gradient">
+        <div id="wrapper">
+            <div id="mynetwork"></div>
+
+
+            <style>
+                #mynetwork {
+                  width: 1845px;
+                  height: 900px;
+                  float: left;
+                  border: 10px groove rgb(0, 147, 233);
+                }
+                #wrapper {
+                    margin: auto;
+
+                }
+                
+            </style>
+
+
+
+            <script>
+                // create an array with nodes
+                var nodes = new vis.DataSet([
+                    { id: 1, label: "BOXSHELL", title:"Boxshell, a very fun console",shape:"hexagon", size: 40,}, // BOXSHELL
+                    { id: 2, label: "os module" ,shape:"diamond"},     
+                    { id: 3, label: "turtle module" ,shape:"diamond"},
+                    { id: 4, label: "datetime module" ,shape:"diamond"},
+                    { id: 5, label: "time module" ,shape:"diamond"},
+                    { id: 6, label: "random module" ,shape:"diamond"},
+                    { id: 7, label: "colorama module" ,shape:"diamond"},
+
+                    { id: 8, label: "BOXCHAT",title:"Boxchat, a nice chatting program via the internet",shape:"hexagon",size: 40,},
+                    { id: 9, label: "random module" ,shape:"diamond"},
+                    { id: 10, label: "os module" ,shape:"diamond"},     
+                    { id: 11, label: "time module" ,shape:"diamond"},
+                    { id: 12, label: "datetime module" ,shape:"diamond"},
+                    { id: 13, label: "socket module" ,shape:"diamond"},
+                    { id: 14, label: "socket module" ,shape:"diamond"},
+
+
+                ]);
+
+                // create an array with edges
+                var edges = new vis.DataSet([
+                    { from: 1, to: 2 },
+                    { from: 1, to: 3 },
+                    { from: 1, to: 4 },
+                    { from: 1, to: 5 },
+                    { from: 1, to: 6 },
+                    { from: 1, to: 7 },
+
+                    { from: 8, to: 9 },
+                    { from: 8, to: 10 },
+                    { from: 8, to: 11 },
+                    { from: 8, to: 12 },
+                    { from: 8, to: 13 },
+                    { from: 8, to: 14 },
+
+                ]);
+
+                // create a network
+                var container = document.getElementById("mynetwork");
+                var data = {
+                  nodes: nodes,
+                  edges: edges,
+                };
+                var options = {
+                    physics: {
+                        stabilization: {enabled:true}, 
+                        "barnesHut": {"centralGravity":0.1, "avoidOverlap":1},
+                        repulsion:{"nodeDistance":0.1} }, 
+                    };
+
+                var network = new vis.Network(container, data, options);
+            </script>
+        </div>
+    </body>
+</html>
