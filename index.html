@@ -1,3 +1,38 @@
 <html>
-  Nothing here yet, Development in progress
+    <head>
+        <meta charset="utf-8"> 
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="base.js"></script>
+        <title>basic website</title>
+    </head>
+    <body class="gradient1">
+
+        <div class="titlebox">
+            <p class="title">8234-Site!</p>
+        </div>
+        <p class="whitetext">
+            some cool text     <br>
+            test
+            
+        </p>
+        <p id="overwritetext">
+            This is overwritten by javascript
+        </p>
+        <table>
+            <tr>
+
+            </tr>
+            <tr>
+                <th><div id="box1"><p>Abc1</p></div></th>
+                <th><div id="box2"><p>Abc2</p></div></th>
+                <th><div id="box3"><p>Abc3</p></div></th>
+                <th><div id="box4"><p>Abc4</p></div></th>
+            </tr>  
+        </table>
+
+    </body>
+    <script>
+        document.getElementById("overwritetext").innerHTML = "Union hosting is da best";
+        document.getElementById("overwritetext").style.color = "white";
+    </script>
 </html>
